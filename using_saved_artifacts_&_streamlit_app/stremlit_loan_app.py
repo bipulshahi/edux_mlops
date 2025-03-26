@@ -4,8 +4,8 @@ import joblib
 
 #read the artifacts to make predictions
 try:
-    _model = joblib.load('E:/edux_mlops_dir/use_saved_file/loan_approval_model.pkl')
-    _scaler = joblib.load('E:/edux_mlops_dir/use_saved_file/loan_approval_scaler.pkl')
+    _model = joblib.load('E:/edux_mlops_dir/using_saved_artifacts_&_streamlit_app/loan_approval_model.pkl')
+    _scaler = joblib.load('E:/edux_mlops_dir/using_saved_artifacts_&_streamlit_app/loan_approval_scaler.pkl')
 except Exception as err:
     st.error(f"Error loading model - {err}")
     st.stop()
