@@ -26,7 +26,7 @@ FEATURES = ['Gender', 'Married', 'Dependents', 'Education',
             'LoanAmount', 'Loan_Amount_Term', 'Credit_History',
             'Property_Area']
 
-NUM_FEATURES = ['ApplicantIncome', 'CoapplicantIncome', 'LoanAmount', 'Loan_Amount_Term']
+NUM_FEATURES = ['ApplicantIncome', 'LoanAmount', 'Loan_Amount_Term']
 CAT_FEATURES = ['Gender', 'Married', 'Dependents', 'Education', 
                 'Self_Employed', 'Credit_History' , 'Property_Area']
 
