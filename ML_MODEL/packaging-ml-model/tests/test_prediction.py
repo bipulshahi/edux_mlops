@@ -9,6 +9,7 @@ from prediction_model.config import config
 from prediction_model.processing.data_handling import load_dataset
 from prediction_model import predict
 
+
 @pytest.fixture                      #decorator to execute single_prediction automatically when test_prediction.py executes by pytest
 def single_prediction():
     test_dataset = load_dataset(config.TEST_FILE)
@@ -35,3 +36,13 @@ def test_single_pred_str_type(single_prediction):
 
 def test_single_pred_validate(single_prediction):
     assert single_prediction.get("Predictions") == 'N'
+
+
+def test_empty_dataset():
+    "Test to ensure prediction handle empty datasets gracefully"
+    print("Testing with an empty dataset...")
+    empty_dataset = []
+    print("Generating predictions for empty dataset....")
+    result = predict.generate_predictions(empty_dataset)
+    assert result.get("Predictions") == []
+    print("Test passed: Predictions handle empty dataset gracefully")

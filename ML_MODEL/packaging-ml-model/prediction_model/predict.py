@@ -13,12 +13,24 @@ _model = load_pipeline(config.MODEL_NAME)
 
 
 def generate_predictions(data_input):
-    data = pd.DataFrame(data_input, columns = config.FEATURES)
-    pred = _model.predict(data)[0]
+    try:
+        data = pd.DataFrame(data_input, columns = config.FEATURES)
+    except Exception as e:
+        print(f"Got an error-{e}")
+        raise ValueError(f"Inexpected data format: {data_input}, Ensure input is a tabular data")
+
+    if data.empty:
+        print("The input dataset is empty.Returning emplty prediction")
+        return {"Predictions" : []}
+
+
+    pred = _model.predict(data[config.FEATURES])[0]
     result = {"Predictions" : pred}
     return result
 
+    
 
+#print(generate_predictions([]))
 '''
 print(generate_predictions([['Male','Yes','0','Graduate','No',5720,0,110,340,1,'Urban']]))
 '''
