@@ -79,6 +79,15 @@ To catch these issues, we use testing frameworks like pytest, which are lightwei
         With pytest, you can write test cases to catch such issues.
 
 
+ # Install prediction model from git
+
+ * pip install git+https://github.com/bipulshahi/edux_mlops.git@main#subdirectory=ML_MODEL/packaging-ml-model
+
+# if setupy.py is not within any sub-directory like packaging-ml-model over here then -
+
+   * pip install git+https://github.com/bipulshahi/edux_mlops.git
+
+
 calculator/
 ├── main.py
 ├── test_add.py
