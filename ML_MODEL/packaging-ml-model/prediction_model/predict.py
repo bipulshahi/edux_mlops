@@ -31,9 +31,9 @@ def generate_predictions(data_input):
     
 
 #print(generate_predictions([]))
-'''
-print(generate_predictions([['Male','Yes','0','Graduate','No',5720,0,110,340,1,'Urban']]))
-'''
+
+#print(generate_predictions([['Male','Yes','0','Graduate','No',5720,0,110,340,1,'Urban']]))
+
 
 '''
 def generate_predictions():

@@ -8,6 +8,7 @@ from prediction_model.config import config
 import prediction_model.processing.preprocessing as pp
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 import numpy as np
 
 
@@ -22,5 +23,5 @@ classification_pipeline = Pipeline([
     ('Label Encoder' , pp.CustomLabelEncoder(config.FEATURES_TO_ENCODE)),
     ('Log Transform' , pp.LogTransform(config.LOG_FEATURES)),
     ('MinMaxScale' , MinMaxScaler()),
-    ('Logistic Classifier' , LogisticRegression())
+    ('Support vector Classifier' , SVC())
 ])
